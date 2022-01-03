@@ -1,0 +1,1 @@
+# Analise-das-estruturas-prioridades
