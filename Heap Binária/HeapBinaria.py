@@ -27,8 +27,7 @@ class HeapBinaria:
             self.dados[pai] = temp
 
             filho = pai
-            pai = ceil((pai - 1) / 2)
-
+            pai = (pai - 1) // 2
 
     def inserir(self, nome, prioridade):
         # Verificar se a Heap está cheia
@@ -52,11 +51,9 @@ if __name__ == "__main__":
     filap.inserir("AF15", 60)
     filap.mostrar()
 
-
     print("\n === Segunda Inserção ====")
     filap.inserir("A250", 70)
     filap.inserir("B350", 39)
-    
     filap.inserir("0G15", 95)
     filap.mostrar()
 
