@@ -1,11 +1,10 @@
 from Objeto import Objeto
-from math import floor, ceil
 
 class HeapBinaria:
     def __init__(self, tamanho_maximo) -> None:
         self.quantidade = 0
         self.tamanho_maximo = tamanho_maximo
-        self.dados = []
+        self.dados = self.dados = [None] * tamanho_maximo
 
     def tamanho(self):
         return self.quantidade
@@ -16,9 +15,11 @@ class HeapBinaria:
     def cheia(self):
         return self.quantidade == self.tamanho_maximo
 
-    def __subir(self):
-        filho = self.quantidade
-        pai = (filho - 1) // 2
+    def __subir(self, filho):
+        # Calculando a posição do pai.
+        pai =(filho - 1) // 2
+
+        # Criando um objeto temporário que auxiliará nas trocas.
         temp = Objeto()
 
         while filho > 0 and self.dados[pai].prioridade <= self.dados[filho].prioridade:
@@ -30,18 +31,25 @@ class HeapBinaria:
             pai = (pai - 1) // 2
 
     def inserir(self, nome, prioridade):
-        # Verificar se a Heap está cheia
+        # Verificar se a Heap está cheia.
         if(self.quantidade == self.tamanho_maximo):
             return False
         
+        # Criando o elemento (objeto) a ser inserido.
         novo_dado = Objeto(nome, prioridade)
-        self.dados.insert(self.quantidade, novo_dado)
-        self.__subir()
+
+        # Inserindo o elemento na ultima posição da Heap.
+        self.dados[self.quantidade] = novo_dado
+
+        # Subindo o elemento para posição correta.
+        self.__subir(filho = self.quantidade)
+
+        # Incrementando em um unidade o valor quantidade.
         self.quantidade += 1
 
     def mostrar(self):
-        for i in self.dados:
-            print(i)
+        for i in range(self.quantidade):           
+            print(self.dados[i])
 
 if __name__ == "__main__":
     filap = HeapBinaria(10)
@@ -61,4 +69,14 @@ if __name__ == "__main__":
     filap.inserir("F48", 33)
     filap.inserir("C987", 78)
     filap.inserir("X58", 66)
+    filap.inserir("X58", 94)
+    filap.inserir("X58", 100)
+    filap.mostrar()
+
+    print("\n === Quarta Inserção ====")
+    filap.inserir("X58", 94)
+    filap.mostrar()
+
+    print("\n === Terceira Inserção ====")
+    filap.inserir("X58", 100)
     filap.mostrar()
