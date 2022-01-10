@@ -1,7 +1,7 @@
 from Objeto import Objeto
 from math import floor, ceil
 
-class FilaPrioridade:
+class FP_VetorOrdenado:
     def __init__(self, tamanho_maximo) -> None:
         self.quantidade = 0
         self.tamanho_maximo = tamanho_maximo
@@ -46,7 +46,7 @@ class FilaPrioridade:
             i -= 1
 
 if __name__ == "__main__":
-    filap = FilaPrioridade(20)
+    filap = FP_VetorOrdenado(20)
 
     print("\n ==== Primeira Inserção ====")
     filap.inserir("A152", 28)
