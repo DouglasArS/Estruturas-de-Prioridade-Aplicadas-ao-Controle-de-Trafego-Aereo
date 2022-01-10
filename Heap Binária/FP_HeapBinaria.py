@@ -10,9 +10,11 @@ class FP_HeapBinaria:
         return self.quantidade
 
     def vazia(self):
+        # Verificando se quantidade é igual a 0.
         return self.quantidade == 0
     
     def cheia(self):
+        # Verificando se quantidade é igual ao tamanho máximo.
         return self.quantidade == self.tamanho_maximo
 
     def __subir(self, filho):
@@ -49,7 +51,7 @@ class FP_HeapBinaria:
         # Subindo o elemento para posição correta.
         self.__subir(filho = self.quantidade)
 
-        # Incrementando em um unidade o valor quantidade.
+        # Incrementando em uma unidade o valor quantidade.
         self.quantidade += 1
 
         return True
@@ -68,7 +70,7 @@ class FP_HeapBinaria:
             if filho < (self.quantidade - 1):
 
                 # Verificando qual filho tem maior prioridade.
-                if self.dados[filho].prioridade < self.dados[filho].prioridade:
+                if self.dados[filho].prioridade < self.dados[filho + 1].prioridade:
                     # Caso o segundo filho tenha maior prioridade, será ele o escolhido.
                     filho += 1
 
@@ -91,7 +93,7 @@ class FP_HeapBinaria:
             print("Fila Vazia.")
             return False
 
-        # Decrementando em um unidade o valor quantidade.
+        # Decrementando em uma unidade o valor quantidade.
         self.quantidade -= 1
 
         # Colocando o ultimo elemento no topo (no lugar do elemento removido).
@@ -108,7 +110,7 @@ class FP_HeapBinaria:
             print("Fila Vazia.")
             return False
 
-        # Mostrando o elemento do topo da fila.
+        # Mostrando o elemento do topo da fila (maior prioridade).
         print(self.dados[0])
 
     def mostrar(self):
@@ -117,9 +119,10 @@ class FP_HeapBinaria:
             print("Fila Vazia.")
             return False
         
-        # Mostrando todos os elementos segundo os níveis do heap.
+        # Mostrando todos os elementos conforme os níveis do heap.
         for i in range(self.quantidade):           
             print(self.dados[i])
+
 
 if __name__ == "__main__":
     fp = FP_HeapBinaria(10)
@@ -158,3 +161,9 @@ if __name__ == "__main__":
     print("\n === Primeira Consulta ====")
     fp.consultar()
 
+    print("\n === Segunda Remoção ====")
+    fp.remover()
+    fp.mostrar()
+
+    print("\n === Segunda Consulta ====")
+    fp.consultar()
