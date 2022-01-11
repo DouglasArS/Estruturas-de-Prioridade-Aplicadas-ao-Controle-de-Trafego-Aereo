@@ -1,7 +1,7 @@
 from Objeto import Objeto
 import time
 
-class FP_VetorOrdenado:
+class FP_VetorDesordenado:
     def __init__(self, tamanho_maximo) -> None:
         self.quantidade = 0
         self.tamanho_maximo = tamanho_maximo
@@ -24,19 +24,11 @@ class FP_VetorOrdenado:
             print("Fila Cheia.")
             return False
 
-        # Criando variável para iterar no loop.
-        i = self.quantidade - 1
-
-        # Liberando a posição correta para inserir o novo elemento.
-        while i >= 0 and self.dados[i].prioridade <= prioridade:
-            self.dados[i + 1] = self.dados[i]
-            i -= 1
-
         # Criando o elemento (objeto) a ser inserido.
         novo_dado = Objeto(nome, prioridade)
 
-        # Inserindo o novo elemento na posição correta.
-        self.dados[i + 1] = novo_dado
+        # Inserindo o novo elemento na última posição.
+        self.dados[self.quantidade] = novo_dado
 
         # Incrementando em uma unidade o valor quantidade.
         self.quantidade += 1
@@ -49,6 +41,19 @@ class FP_VetorOrdenado:
             print("Fila Vazia.")
             return False
 
+        # Procurando o elemento de menor prioridade.
+        menor = self.dados[0]
+        indice = 0
+
+        for i in range(1, self.quantidade):
+            if menor.prioridade > self.dados[i].prioridade:
+                menor = self.dados[i]
+                indice = i
+
+        # Preenchendo o elemento removido com seus sucessores.
+        for i in range(indice, self.quantidade - 1):
+            self.dados[i] = self.dados[i + 1]
+
         # Decrementando em uma unidade o valor quantidade.
         self.quantidade -= 1
 
@@ -59,9 +64,18 @@ class FP_VetorOrdenado:
         if self.vazia():
             print("Fila Vazia.")
             return False
+
+        # Procurando o elemento de menor prioridade.
+        menor = self.dados[0]
+        indice = 0
+
+        for i in range(1, self.quantidade):
+            if menor.prioridade > self.dados[i].prioridade:
+                menor = self.dados[i]
+                indice = i
         
-        # Mostrando ultimo elemento do array (menor prioridade)
-        print(self.dados[self.quantidade - 1])
+        # Mostrando o elemento de menor prioridade
+        print(self.dados[indice])
     
         return True
 
@@ -70,13 +84,13 @@ class FP_VetorOrdenado:
         if self.vazia():
             print("Fila Vazia.")
             return False
-
-        # Mostrando todos os elementos do array (do final para o inicio, de acordo com as prioridades).
-        for i in range(self.quantidade - 1, 0, -1):           
+        
+        # Mostrando todos os elementos conforme os níveis do heap.
+        for i in range(self.quantidade):           
             print(self.dados[i])
 
         return True
-        
+
 
 if __name__ == "__main__":
     
@@ -86,7 +100,7 @@ if __name__ == "__main__":
     for i in range(0, total_de_interacao):
         tempo_inicial = time.time()
 
-        fp = FP_VetorOrdenado(100000)
+        fp = FP_VetorDesordenado(100000)
 
         for j in range(1, 10000):
             fp.inserir(nome = "A" + str(j), prioridade = j)            

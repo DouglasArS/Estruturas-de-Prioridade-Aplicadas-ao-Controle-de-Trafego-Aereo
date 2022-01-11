@@ -1,4 +1,5 @@
 from Objeto import Objeto
+import time
 
 class FP_HeapBinaria:
     def __init__(self, tamanho_maximo) -> None:
@@ -25,7 +26,7 @@ class FP_HeapBinaria:
         temp = Objeto()
 
         # Realizando a subida do elemento.
-        while filho > 0 and self.dados[pai].prioridade <= self.dados[filho].prioridade:
+        while filho > 0 and self.dados[pai].prioridade >= self.dados[filho].prioridade:
 
             # Efetuando a troca entre os elementos pai e filho.
             temp = self.dados[filho]
@@ -70,12 +71,12 @@ class FP_HeapBinaria:
             if filho < (self.quantidade - 1):
 
                 # Verificando qual filho tem maior prioridade.
-                if self.dados[filho].prioridade < self.dados[filho + 1].prioridade:
+                if self.dados[filho].prioridade > self.dados[filho + 1].prioridade:
                     # Caso o segundo filho tenha maior prioridade, será ele o escolhido.
                     filho += 1
 
             # Verificando se pai ainda tem maior prioridade que o filho.
-            if self.dados[pai].prioridade >= self.dados[filho].prioridade:
+            if self.dados[pai].prioridade <= self.dados[filho].prioridade:
                 break
 
             # Efetuando a troca entre os elementos pai e filho.
@@ -123,47 +124,37 @@ class FP_HeapBinaria:
         for i in range(self.quantidade):           
             print(self.dados[i])
 
+        return True
+
 
 if __name__ == "__main__":
-    fp = FP_HeapBinaria(10)
+    
+    total_de_interacao = 10
+    tempo_acumulado = 0
 
-    print("\n === Primeira Inserção ====")
-    fp.inserir("A152", 28)
-    fp.inserir("AF15", 60)
-    fp.mostrar()
+    for i in range(0, total_de_interacao):
+        tempo_inicial = time.time()
 
-    print("\n === Segunda Inserção ====")
-    fp.inserir("A250", 70)
-    fp.inserir("B350", 39)
-    fp.inserir("0G15", 95)
-    fp.mostrar()
+        fp = FP_HeapBinaria(100000)
 
-    print("\n === Terceira Inserção ====")
-    fp.inserir("F48", 33)
-    fp.inserir("C987", 78)
-    fp.inserir("X58", 66)
-    fp.inserir("X58", 94)
-    fp.inserir("X58", 100)
-    fp.mostrar()
+        for j in range(1, 10000):
+            fp.inserir(nome = "A" + str(j), prioridade = j)            
 
-    print("\n === Quarta Inserção ====")
-    fp.inserir("X58", 94)
-    fp.mostrar()
+        for j in range(0, 5000):
+            fp.remover()
+            fp.consultar()
 
-    print("\n === Terceira Inserção ====")
-    fp.inserir("X58", 100)
-    fp.mostrar()
+        for j in range(1, 10000):
+            fp.inserir(nome = "B" + str(j), prioridade = j)
+            fp.consultar()
 
-    print("\n === Primeira Remoção ====")
-    fp.remover()
-    fp.mostrar()
+        for j in range(0, 5000):
+            fp.remover()
+            fp.consultar()
 
-    print("\n === Primeira Consulta ====")
-    fp.consultar()
+        for j in range(0, 10000):
+            fp.remover()
 
-    print("\n === Segunda Remoção ====")
-    fp.remover()
-    fp.mostrar()
+        tempo_acumulado += (time.time() - tempo_inicial)
 
-    print("\n === Segunda Consulta ====")
-    fp.consultar()
+    print("Tempo = {:.2f}", tempo_acumulado / total_de_interacao)
