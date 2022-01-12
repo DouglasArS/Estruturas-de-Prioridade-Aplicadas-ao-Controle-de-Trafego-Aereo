@@ -1,3 +1,5 @@
+######## Código não finalizado ########
+
 #Criação do codígo do heapsort.
 #O algoritmo faz a ordenação de um vetor
 #por meio do uso de heaps.
