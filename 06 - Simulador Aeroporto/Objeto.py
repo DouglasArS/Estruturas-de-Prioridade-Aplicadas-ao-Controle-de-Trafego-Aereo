@@ -4,7 +4,7 @@ class Objeto():
         self.prioridade = prioridade
 
     def __repr__(self):
-        rep = "Nome: " + str(self.nome) + " | " + "Nivel de Combustivel: " + str(self.prioridade) + "%"       
+        rep = "Nome: " + str(self.nome) + " | " + "Nivel de Combustivel: " + str(self.prioridade)        
         return rep
 
     def __str__(self) -> str:

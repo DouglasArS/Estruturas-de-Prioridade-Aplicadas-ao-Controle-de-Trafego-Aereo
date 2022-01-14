@@ -1,4 +1,4 @@
-from Objeto import Objeto
+from Aviao import Aviao
 import time
 
 class FP_VetorDesordenado:
@@ -24,8 +24,8 @@ class FP_VetorDesordenado:
             print("Fila Cheia.")
             return False
 
-        # Criando o elemento (objeto) a ser inserido.
-        novo_dado = Objeto(nome, prioridade)
+        # Criando o elemento (Aviao) a ser inserido.
+        novo_dado = Aviao(nome, prioridade)
 
         # Inserindo o novo elemento na última posição.
         self.dados[self.quantidade] = novo_dado
