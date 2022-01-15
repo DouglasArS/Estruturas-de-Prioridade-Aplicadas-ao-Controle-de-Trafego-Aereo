@@ -60,7 +60,7 @@ class FP_VetorOrdenado:
             print("Fila Vazia.")
             return False
         
-        # Mostrando ultimo elemento do array (menor prioridade)
+        # Mostrando ultimo elemento do array (maiorr prioridade)
         print(self.dados[self.quantidade - 1])
     
         return True
