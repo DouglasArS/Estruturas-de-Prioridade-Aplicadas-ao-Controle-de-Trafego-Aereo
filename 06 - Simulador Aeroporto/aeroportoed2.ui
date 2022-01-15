@@ -22,9 +22,9 @@
    <widget class="QLabel" name="AviaoHabilitadoPouso">
     <property name="geometry">
      <rect>
-      <x>259</x>
+      <x>250</x>
       <y>170</y>
-      <width>310</width>
+      <width>321</width>
       <height>27</height>
      </rect>
     </property>
@@ -35,7 +35,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Avião Habiitado para Pouso</string>
+     <string>Avião Habilitado para Pouso</string>
     </property>
    </widget>
    <widget class="QFrame" name="Frame1">
@@ -44,11 +44,12 @@
       <x>0</x>
       <y>-10</y>
       <width>801</width>
-      <height>121</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(81, 81, 81);</string>
+     <string notr="true">background-color: rgb(33, 31, 33);
+</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -59,8 +60,8 @@
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>30</y>
+       <x>161</x>
+       <y>42</y>
        <width>141</width>
        <height>61</height>
       </rect>
@@ -86,8 +87,8 @@
     <widget class="QLabel" name="AeroportoED2">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>30</y>
+       <x>330</x>
+       <y>40</y>
        <width>471</width>
        <height>61</height>
       </rect>
@@ -110,10 +111,10 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>81</width>
-       <height>61</height>
+       <x>5</x>
+       <y>20</y>
+       <width>141</width>
+       <height>111</height>
       </rect>
      </property>
      <property name="font">
@@ -133,7 +134,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../Downloads/logo_aeroporto_redimensionado.png</pixmap>
+      <pixmap>../../../../../Downloads/qtd (3).png</pixmap>
      </property>
     </widget>
    </widget>
@@ -141,13 +142,13 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>110</y>
+      <y>130</y>
       <width>801</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 194, 0);</string>
+     <string notr="true">background-color: rgb(0, 55, 101);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -166,7 +167,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 194, 0);</string>
+     <string notr="true">background-color: rgb(0, 55, 101);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -191,6 +192,9 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -199,7 +203,7 @@
    <widget class="QLabel" name="NovoAviao">
     <property name="geometry">
      <rect>
-      <x>345</x>
+      <x>325</x>
       <y>320</y>
       <width>161</width>
       <height>27</height>
@@ -218,14 +222,14 @@
    <widget class="QFrame" name="Frame4">
     <property name="geometry">
      <rect>
-      <x>152</x>
+      <x>132</x>
       <y>360</y>
-      <width>511</width>
+      <width>541</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 194, 0);</string>
+     <string notr="true">background-color: rgb(0, 55, 101);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -236,7 +240,7 @@
     <widget class="QLineEdit" name="LerNome">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>190</x>
        <y>10</y>
        <width>331</width>
        <height>20</height>
@@ -247,11 +251,14 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="LerCombustivel">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>190</x>
        <y>50</y>
        <width>331</width>
        <height>20</height>
@@ -262,11 +269,14 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
     <widget class="QLabel" name="Nome">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>113</x>
        <y>4</y>
        <width>71</width>
        <height>27</height>
@@ -280,6 +290,9 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>Nome</string>
      </property>
@@ -289,7 +302,7 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>131</width>
+       <width>151</width>
        <height>27</height>
       </rect>
      </property>
@@ -301,15 +314,18 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
-      <string>Combustível</string>
+      <string>Combustível (%)</string>
      </property>
     </widget>
    </widget>
    <widget class="QPushButton" name="Inserir">
     <property name="geometry">
      <rect>
-      <x>242</x>
+      <x>230</x>
       <y>460</y>
       <width>111</width>
       <height>31</height>
@@ -328,7 +344,7 @@
    <widget class="QPushButton" name="Remover">
     <property name="geometry">
      <rect>
-      <x>436</x>
+      <x>440</x>
       <y>460</y>
       <width>111</width>
       <height>31</height>
