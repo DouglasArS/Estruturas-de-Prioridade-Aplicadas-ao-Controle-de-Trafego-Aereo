@@ -65,7 +65,7 @@ class FP_VetorDesordenado:
             print("Fila Vazia.")
             return False
 
-        # Procurando o elemento de menor prioridade.
+        # Procurando o elemento de maior prioridade.
         menor = self.dados[0]
         indice = 0
 
@@ -74,7 +74,7 @@ class FP_VetorDesordenado:
                 menor = self.dados[i]
                 indice = i
         
-        # Mostrando o elemento de menor prioridade
+        # Mostrando o elemento de maior prioridade
         print(self.dados[indice])
     
         return True
