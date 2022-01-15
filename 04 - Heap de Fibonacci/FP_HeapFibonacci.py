@@ -64,7 +64,7 @@ class FP_HeapFibonacci:
 
         no1.grau += 1
     
-    # Consolidating the heap
+    # Consolidar a heap
     def __consolidar(self):
         temp2 = math.log2(self.quantidade)
         temp3 = int(temp2)
@@ -125,8 +125,7 @@ class FP_HeapFibonacci:
                     self.mini = array[j]
                 elif array[j].prioridade < self.mini.prioridade:
                     self.mini = array[j]
-        
-    # Function to extract minimum node in the heap
+                    
     def remover(self):
         # Verificando se a fila está vazia.
         if self.vazia():
