@@ -1,4 +1,4 @@
-class Objeto():
+class Aviao():
     def __init__(self, nome = None, prioridade = None) -> None:
         self.nome = nome
         self.prioridade = prioridade

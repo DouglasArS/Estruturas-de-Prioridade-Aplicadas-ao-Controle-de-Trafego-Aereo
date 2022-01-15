@@ -1,4 +1,4 @@
-from Objeto import Objeto
+from Aviao import Aviao
 import time
 
 class FP_VetorOrdenado:
@@ -32,8 +32,8 @@ class FP_VetorOrdenado:
             self.dados[i + 1] = self.dados[i]
             i -= 1
 
-        # Criando o elemento (objeto) a ser inserido.
-        novo_dado = Objeto(nome, prioridade)
+        # Criando o elemento (Aviao) a ser inserido.
+        novo_dado = Aviao(nome, prioridade)
 
         # Inserindo o novo elemento na posição correta.
         self.dados[i + 1] = novo_dado

@@ -1,6 +1,8 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from HeapBinaria import FP_HeapBinaria
+from FP_HeapFibonacci import FP_HeapFibonacci
+import sys
+sys.path.append("../Analise-das-estruturas-de-prioridades/06 - Simulador Aeroporto/")
 
 class UserInterface:
     def __init__(self):
@@ -9,9 +11,9 @@ class UserInterface:
     def initializeUi(self):
         self.app = QtWidgets.QApplication([])
 
-        self.fp = FP_HeapBinaria(10000)
+        self.fp = FP_HeapFibonacci()
 
-        self.ui = loadUi("./aeroportoed2.ui")
+        self.ui = loadUi("./06 - Simulador Aeroporto/aeroportoed2.ui")
         
         self.ui.AviaoPouso.setText("Nenhum Avião Solicitou Pouso.")
 
@@ -27,8 +29,8 @@ class UserInterface:
 
         self.fp.inserir(nome, combustivel)
 
-        self.ui.AviaoPouso.setText("Nome: " + self.fp.dados[0].nome + " - " \
-            + "Nivel de Combustível: " + self.fp.dados[0].prioridade + "%")
+        self.ui.AviaoPouso.setText("Nome: " + self.fp.mini.nome + " - " \
+            + "Nivel de Combustível: " + self.fp.mini.prioridade + "%")
         
         self.ui.LerNome.clear()
         self.ui.LerCombustivel.clear()
@@ -42,8 +44,8 @@ class UserInterface:
         if self.fp.vazia():
             self.ui.AviaoPouso.setText("Nenhum Avião Solicitou Pouso.")
         else:
-            self.ui.AviaoPouso.setText("Nome: " + self.fp.dados[0].nome + " - " \
-            + "Nivel de Combustível: " + self.fp.dados[0].prioridade + "%")
+            self.ui.AviaoPouso.setText("Nome: " + self.fp.mini.nome + " - " \
+            + "Nivel de Combustível: " + self.fp.mini.prioridade + "%")
 
         self.fp.mostrar()
         print()

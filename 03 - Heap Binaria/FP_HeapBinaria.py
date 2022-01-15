@@ -1,4 +1,4 @@
-from Objeto import Objeto
+from Aviao import Aviao
 import time
 
 class FP_HeapBinaria:
@@ -22,8 +22,8 @@ class FP_HeapBinaria:
         # Calculando a posição do pai.
         pai =(filho - 1) // 2
 
-        # Criando um objeto temporário que auxiliará nas trocas.
-        temp = Objeto()
+        # Criando um Aviao temporário que auxiliará nas trocas.
+        temp = Aviao()
 
         # Realizando a subida do elemento.
         while filho > 0 and self.dados[pai].prioridade >= self.dados[filho].prioridade:
@@ -43,8 +43,8 @@ class FP_HeapBinaria:
             print("Fila Cheia.")
             return False
         
-        # Criando o elemento (objeto) a ser inserido.
-        novo_dado = Objeto(nome, prioridade)
+        # Criando o elemento (Aviao) a ser inserido.
+        novo_dado = Aviao(nome, prioridade)
 
         # Inserindo o elemento na ultima posição da Heap.
         self.dados[self.quantidade] = novo_dado
@@ -58,8 +58,8 @@ class FP_HeapBinaria:
         return True
 
     def __descer(self, pai):
-        # Criando um objeto temporário que auxiliará nas trocas.
-        temp = Objeto()
+        # Criando um Aviao temporário que auxiliará nas trocas.
+        temp = Aviao()
         
         # Calculando a posiçãodo filho.
         filho = 2 * pai + 1
@@ -128,26 +128,83 @@ class FP_HeapBinaria:
 
 
 if __name__ == "__main__":
-    
-    fp = FP_HeapBinaria(100000)
+    fp = FP_HeapBinaria(100)
 
-    fp.inserir("X14", 12)
+    print("\n\n === Primeira Inserção ====")
+    fp.inserir("A152", 28)
+    fp.inserir("AF15", 60)
     fp.mostrar()
 
-    print()
+    print("\n === Primeira Consulta ====")
+    fp.consultar()
 
-    fp.inserir("G1F4", 25)
-    fp.mostrar()
-    print()
-
-    fp.inserir("Xda", 30)
+    print("\n === Primeira Remoção ====")
+    fp.remover()
     fp.mostrar()
 
-    print()
 
-    fp.inserir("AAA", 10)
+    print("\n\n\n === Segunda Inserção ====")
+    fp.inserir("A250", 70)
+    fp.inserir("B350", 39)
+    fp.inserir("0G15", 95)
     fp.mostrar()
 
-    print(fp.dados[0])
+    print("\n === Segunda Consulta ====")
+    fp.consultar()
 
-      
+    print("\n === Segunda Remoção ====")
+    fp.remover()
+    fp.mostrar()
+
+
+    print("\n\n\n === Terceira Inserção ====")
+    fp.inserir("F48", 33)
+    fp.mostrar()
+
+    print("\n === Terceira Consulta ====")
+    fp.consultar()
+
+    print("\n === Terceira Remoção ====")
+    fp.remover()
+    fp.mostrar()
+
+
+    print("\n\n\n === Quarta Inserção ====")
+    fp.inserir("C987", 78)
+    fp.inserir("X58", 66)
+    fp.mostrar()
+
+    print("\n === Quarta Consulta ====")
+    fp.consultar()
+
+    print("\n === Quarta Remoção ====")
+    fp.remover()
+    fp.mostrar()
+
+
+    print("\n\n\n === Quinta Inserção ====")
+    fp.inserir("F14", 94)
+    fp.inserir("L896", 100)
+    fp.mostrar()
+
+    print("\n === Quinta Consulta ====")
+    fp.consultar()
+
+    print("\n === Quinta Remoção ====")
+    fp.remover()
+    fp.mostrar()
+
+
+    print("\n\n\n === Sexta Inserção ====")
+    fp.inserir("F14", 45)
+    fp.inserir("L896", 110)
+    fp.mostrar()
+
+    print("\n === Sexta Remoção ====")
+    fp.remover()
+    fp.mostrar()
+
+    print("\n === Sexta Consulta ====")
+    fp.consultar()
+
+    print("\n")
