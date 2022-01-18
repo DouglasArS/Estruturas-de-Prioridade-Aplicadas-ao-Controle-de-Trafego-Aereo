@@ -94,7 +94,7 @@ class FP_VetorDesordenado:
 
 if __name__ == "__main__":
     
-    total_de_interacao = 10
+    total_de_interacao = 10000
     tempo_acumulado = 0
 
     for i in range(0, total_de_interacao):
@@ -102,22 +102,22 @@ if __name__ == "__main__":
 
         fp = FP_VetorDesordenado(100000)
 
-        for j in range(1, 10000):
+        for j in range(1, 10):
             fp.inserir(nome = "A" + str(j), prioridade = j)            
 
-        for j in range(0, 5000):
+        for j in range(0, 5):
             fp.remover()
             fp.consultar()
 
-        for j in range(1, 10000):
+        for j in range(1, 10):
             fp.inserir(nome = "B" + str(j), prioridade = j)
             fp.consultar()
 
-        for j in range(0, 5000):
+        for j in range(0, 5):
             fp.remover()
             fp.consultar()
 
-        for j in range(0, 10000):
+        for j in range(0, 10):
             fp.remover()
 
         tempo_acumulado += (time.time() - tempo_inicial)

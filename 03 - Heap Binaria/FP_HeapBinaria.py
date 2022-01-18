@@ -128,83 +128,33 @@ class FP_HeapBinaria:
 
 
 if __name__ == "__main__":
-    fp = FP_HeapBinaria(100)
+    
+    total_de_interacao = 10000
+    tempo_acumulado = 0
 
-    print("\n\n === Primeira Inserção ====")
-    fp.inserir("A152", 28)
-    fp.inserir("AF15", 60)
-    fp.mostrar()
+    for i in range(0, total_de_interacao):
+        tempo_inicial = time.time()
 
-    print("\n === Primeira Consulta ====")
-    fp.consultar()
+        fp = FP_HeapBinaria(100000)
 
-    print("\n === Primeira Remoção ====")
-    fp.remover()
-    fp.mostrar()
+        for j in range(1, 10):
+            fp.inserir(nome = "A" + str(j), prioridade = j)            
 
+        for j in range(0, 5):
+            fp.remover()
+            fp.consultar()
 
-    print("\n\n\n === Segunda Inserção ====")
-    fp.inserir("A250", 70)
-    fp.inserir("B350", 39)
-    fp.inserir("0G15", 95)
-    fp.mostrar()
+        for j in range(1, 10):
+            fp.inserir(nome = "B" + str(j), prioridade = j)
+            fp.consultar()
 
-    print("\n === Segunda Consulta ====")
-    fp.consultar()
+        for j in range(0, 5):
+            fp.remover()
+            fp.consultar()
 
-    print("\n === Segunda Remoção ====")
-    fp.remover()
-    fp.mostrar()
+        for j in range(0, 10):
+            fp.remover()
 
+        tempo_acumulado += (time.time() - tempo_inicial)
 
-    print("\n\n\n === Terceira Inserção ====")
-    fp.inserir("F48", 33)
-    fp.mostrar()
-
-    print("\n === Terceira Consulta ====")
-    fp.consultar()
-
-    print("\n === Terceira Remoção ====")
-    fp.remover()
-    fp.mostrar()
-
-
-    print("\n\n\n === Quarta Inserção ====")
-    fp.inserir("C987", 78)
-    fp.inserir("X58", 66)
-    fp.mostrar()
-
-    print("\n === Quarta Consulta ====")
-    fp.consultar()
-
-    print("\n === Quarta Remoção ====")
-    fp.remover()
-    fp.mostrar()
-
-
-    print("\n\n\n === Quinta Inserção ====")
-    fp.inserir("F14", 94)
-    fp.inserir("L896", 100)
-    fp.mostrar()
-
-    print("\n === Quinta Consulta ====")
-    fp.consultar()
-
-    print("\n === Quinta Remoção ====")
-    fp.remover()
-    fp.mostrar()
-
-
-    print("\n\n\n === Sexta Inserção ====")
-    fp.inserir("F14", 45)
-    fp.inserir("L896", 110)
-    fp.mostrar()
-
-    print("\n === Sexta Remoção ====")
-    fp.remover()
-    fp.mostrar()
-
-    print("\n === Sexta Consulta ====")
-    fp.consultar()
-
-    print("\n")
+    print("Tempo = {:.2f}", tempo_acumulado / total_de_interacao)
