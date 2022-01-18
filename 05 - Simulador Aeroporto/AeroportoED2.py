@@ -1,6 +1,6 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5 import QtGui
 from FP_HeapFibonacci import FP_HeapFibonacci
 import sys
 sys.path.append("../Analise-das-estruturas-de-prioridades/05 - Simulador Aeroporto/")
