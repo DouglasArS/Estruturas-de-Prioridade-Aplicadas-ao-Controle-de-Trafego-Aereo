@@ -1,6 +1,6 @@
 # Estruturas de Prioridade Aplicadas ao Controle de Tráfego Aéreo
 
-## Sobre o Projeto:
+## Sobre o projeto:
 Neste presente trabalho, utilizando a linguagem Python, serão implementados diversos algorítmos de prioridade que seram aplicadas em uma simulação de aeroporto, cujo o papel destas estruturas será de controlar o fluxo aéreo dos aviões baseado na quantidade de gasolina que possuem.
 
 **Palavras-chave:** Estrutura de dados. Estruturas de prioridade. Heaps. Controle de tráfego aéreo.
