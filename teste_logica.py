@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    fp = FP_VetorDesordenado(20)
+    fp = FP_VetorDesordenado(100)
 
     print("\n\n === Primeira Inserção ====")
     fp.inserir("A152", 28)
